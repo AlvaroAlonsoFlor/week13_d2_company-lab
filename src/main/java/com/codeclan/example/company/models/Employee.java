@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table( name = "employees")
 public class Employee {
 
     @Id
@@ -24,14 +26,14 @@ public class Employee {
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;
 
-    private List<Project> projects;
+//    private List<Project> projects;
 
     public Employee(String firstName, String lastName, int employeeNumber, Department department) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.employeeNumber = employeeNumber;
         this.department = department;
-        this.projects = new ArrayList<>();
+//        this.projects = new ArrayList<>();
     }
 
     public Employee() {
@@ -77,11 +79,11 @@ public class Employee {
         this.department = department;
     }
 
-    public List<Project> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(List<Project> projects) {
-        this.projects = projects;
-    }
+//    public List<Project> getProjects() {
+//        return projects;
+//    }
+//
+//    public void setProjects(List<Project> projects) {
+//        this.projects = projects;
+//    }
 }
